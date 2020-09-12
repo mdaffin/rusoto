@@ -178,7 +178,7 @@ impl ReadMockResponse for MockResponseReader {
 
         input_file
             .read_to_string(&mut mock_response)
-            .unwrap_or_else(|_| panic!("Failed to read {:?}", file_name));
+            .expect("couldn't read file");
 
         mock_response
     }
